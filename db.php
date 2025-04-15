@@ -1,14 +1,12 @@
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "pharmacy_db";
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$database = 'pharmacy_db';
 
-// Create connection
-$conn = new mysqli($host, $username, $password, $database);
+$conn = mysqli_connect($host, $user, $password, $database);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 ?>
